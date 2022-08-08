@@ -27,7 +27,6 @@ app.set("view engine", ".hbs");
 
 // routes
 app.use("/", require("./routes/index"))
-app.use("/dashboard", require("./routes/index"))
 
 const PORT = process.env.PORT || 3000
 
