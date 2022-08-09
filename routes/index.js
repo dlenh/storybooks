@@ -4,13 +4,13 @@
  // @desc login/landing page
  // @route GET /
  router.get("/", (req, res) => {
-     res.send("Login")
+     res.render("login")
  })
 
  // @desc dashboard
  // @route GET /dashboard
  router.get("/dashboard", (req, res) => {
-    res.send("Dashboard")
+    res.render("dashboard")
 })
 
  module.exports = router
