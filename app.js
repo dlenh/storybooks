@@ -1,3 +1,4 @@
+const path = require("path")
 const express = require("express")
 const dotenv = require("dotenv")
 const morgan = require("morgan")
@@ -24,6 +25,9 @@ app.engine(".hbs", exphbs.engine({
     })
 );
 app.set("view engine", ".hbs");
+
+// static folder
+app.use(express.static(path.join(__dirname, "public")))
 
 // routes
 app.use("/", require("./routes/index"))
