@@ -27,9 +27,15 @@ if (process.env.NODE_ENV === "development") {
     app.use(morgan("dev"))
 }
 
+// handlebars helpers
+const { formatDate } = require("./helpers/hbs")
+
 // handlebars - templating engine
 // need the word .engine after .exphbs
 app.engine(".hbs", exphbs.engine({
+    helpers: {
+        formatDate,
+    },
     defaultLayout: "main",
     extname: ".hbs"
     })
