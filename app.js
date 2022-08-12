@@ -61,6 +61,12 @@ app.use(
 app.use(passport.initialize())
 app.use(passport.session())
 
+// set global variable
+app.use(function (req, res, next) { // pass request onto the next middleware
+    res.locals.user = req.user || null
+    next()
+})
+
 // static folder
 app.use(express.static(path.join(__dirname, "public")))
 
