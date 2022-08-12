@@ -17,7 +17,8 @@ const StorySchema = new mongoose.Schema({
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "User"
+        ref: "User",
+        required: true // app will break if the user is not present
     },
     createdAt: {
         type: Date,
